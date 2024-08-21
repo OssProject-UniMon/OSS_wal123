@@ -14,6 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:background="#f1f1f1"
         android:orientation="vertical">
 
         <LinearLayout
@@ -132,22 +133,83 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_width="370dp"
+            android:layout_height="150dp"
+            android:layout_margin="22dp"
+            android:background="@drawable/bubble_user"
             android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/btn3"
-                android:layout_marginLeft="14dp"
-                android:layout_marginRight="20dp"
+            <LinearLayout
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/month"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="N월 소비"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/darker_gray"/>
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/icon_1"
+                    android:scaleType="fitXY" />
+                <Button
+                    android:id="@+id/btn3"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:textSize="20sp"
+                    android:textColor="#ffffff"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:text="내 계좌 확인하기"
-                android:textSize="20sp"
-                android:textColor="#ffffff"
-                android:background="@drawable/background_radius"
-                />
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/c_text1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="현 소비량:190,280원"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"/>
+                <TextView
+                    android:id="@+id/c_text2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="목표 금액의 37.5% 사용"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#313131"/>
+                <TextView
+                    android:id="@+id/c_text3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="제일 높은 소비 카테고리: 쇼핑"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#878787"/>
+                <TextView
+                    android:id="@+id/c_text4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="카테고리 목표 금액의 93% 사용"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#878787"/>
+            </LinearLayout>
 
         </LinearLayout>
 
