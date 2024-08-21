@@ -137,6 +137,9 @@
             android:layout_height="150dp"
             android:layout_margin="22dp"
             android:background="@drawable/bubble_user"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="onBubbleUserClick"
             android:orientation="horizontal">
 
             <LinearLayout

@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.util.SparseIntArray
+import android.view.View
 import android.widget.Button
 import android.widget.GridLayout
 import android.widget.ListView
@@ -98,6 +99,11 @@ class MainActivity : AppCompatActivity() {
             startActivityForResult(intent, REQUEST_CODE_ADD_SCHEDULE)
         }
 
+    }
+
+    fun onBubbleUserClick(view: View) { // 배경 눌리면 이동하게, 레이아웃에서 설정하고 함수 호출하게함
+        val intent = Intent(this, MonitoringActivity::class.java)
+        startActivity(intent)
     }
 
     private fun initializeGrid() {

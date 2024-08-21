@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f1f1f1"
+    tools:context=".MonitoringActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="370dp"
+                android:layout_height="150dp"
+                android:layout_margin="22dp"
+                android:background="@drawable/bubble_user"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="onBubbleUserClick2"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/none1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:text="연동 계좌"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:textColor="#000000"/>
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@drawable/icon_1"
+                        android:scaleType="fitXY" />
+                    <Button
+                        android:id="@+id/btn3"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:textSize="20sp"
+                        android:textColor="#ffffff"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/m_text1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="정재민님의 연동된 통장"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/darker_gray"/>
+                    <TextView
+                        android:id="@+id/m_text2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="288,900원"
+                        android:textSize="30sp"
+                        android:textStyle="bold"
+                        android:textColor="#000000"/>
+                    <TextView
+                        android:id="@+id/m_text3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="카카오뱅크: 33322126357"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="#878787"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="370dp"
+                android:layout_height="match_parent"
+                android:layout_margin="22dp"
+                android:background="@drawable/bubble_user"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/m_text4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="5월 내 소비"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:textColor="#000000"/>
+                <TextView
+                    android:id="@+id/m_text5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="보고서 요약"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#313131"/>
+                <LinearLayout
+                    android:layout_width="340dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/bubble_bogo"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/m_text6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="2dp"
+                        android:text="이번 달"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="#878787"/>
+                    <TextView
+                        android:id="@+id/m_text7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginLeft="10dp"
+                        android:text="현재 190,280원 사용 (45%)"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="#313131"/>
+                    <TextView
+                        android:id="@+id/m_text8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginLeft="10dp"
+                        android:text="저번달 대비 13.3% 증가!"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="#f40707"/>
+                    <TextView
+                        android:id="@+id/m_text9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginLeft="10dp"
+                        android:text="이번 달 목표 금액의 45%를 이미 사용하셨네요! 남은 기간 동안은 꼭 필요한 지출만 하며 예산을 잘 관리하는 것이 중요해요. 앞으로의 지출을 신중하게 계획하고, 식비나 여가비 등에서 절약할 수 있는 방법을 찾아보세요. 작은 절약이 큰 변화를 가져올 수 있습니다. 힘내세요!"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#878787"/>
+                    <LinearLayout
+                        android:layout_width="330dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_marginTop="18dp"
+                            android:background="@drawable/icon_1"
+                            android:scaleType="fitXY" />
+                        <LinearLayout
+                            android:layout_width="330dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView
+                                android:id="@+id/m_text10"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="38dp"
+                                android:text="최고소비 카테고리: 쇼핑"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:textColor="#313131"/>
+                            <TextView
+                                android:id="@+id/m_text11"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="전달 대비 22.7% 증가"
+                                android:textSize="20sp"
+                                android:textColor="#313131"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="330dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_marginTop="18dp"
+                            android:background="@drawable/icon_1"
+                            android:scaleType="fitXY" />
+                        <LinearLayout
+                            android:layout_width="330dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView
+                                android:id="@+id/m_text12"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="38dp"
+                                android:text="최저소비 카테고리: 음식점"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:textColor="#313131"/>
+                            <TextView
+                                android:id="@+id/m_text13"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="전달 대비 90% 감소"
+                                android:textSize="20sp"
+                                android:textColor="#313131"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                    <Button
+                        android:id="@+id/innerButtongo2"
+                        android:layout_width="100dp"
+                        android:layout_height="35dp"
+                        android:background="@drawable/background_radius"
+                        android:layout_marginLeft="215dp"
+                        android:text="자세히 보기"
+                        android:textColor="@color/white"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+    </LinearLayout>
+</layout>
