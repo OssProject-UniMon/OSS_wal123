@@ -65,7 +65,7 @@ class ChatActivity : AppCompatActivity() {
             val userInput = inputEditText.text.toString()
             addUserMessage(userInput)
             addBotMessage("답변 중...")
-            val dynamicUrl = "/job/recommend?userId=$userId"
+            val dynamicUrl = "api/v1/job/recommend?userId=$userId"
             val call = ActService.response_register(dynamicUrl, AnsRequest(userInput))
             call.enqueue(object : Callback<AnsResponse> {
                 override fun onResponse(call: Call<AnsResponse>, response: Response<AnsResponse>) {

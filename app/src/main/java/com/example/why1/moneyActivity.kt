@@ -113,7 +113,7 @@ class moneyActivity : AppCompatActivity() {
         val ActService = retrofit.create(ManageService::class.java)
 
 
-            val dynamicUrl2 = "/account/logs?userId=$userId"
+            val dynamicUrl2 = "api/v1/account/logs?userId=$userId"
             val call = ActService.act_list(dynamicUrl2)
             call.enqueue(object : Callback<act_listResponse> {
                 override fun onResponse(call: Call<act_listResponse>, response: Response<act_listResponse>) {
@@ -166,7 +166,7 @@ class moneyActivity : AppCompatActivity() {
         }
 
         restart_btn.setOnClickListener {
-            val dynamicUrl3 = "/account/test?userId=$userId"
+            val dynamicUrl3 = "api/v1/account/test?userId=$userId"
             val call2 = ActService.test_actlist(dynamicUrl3)
             call2.enqueue(object : Callback<act_listResponse> {
                 override fun onResponse(call: Call<act_listResponse>, response: Response<act_listResponse>) {

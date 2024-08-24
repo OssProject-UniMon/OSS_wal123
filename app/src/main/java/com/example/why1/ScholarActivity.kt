@@ -39,7 +39,7 @@ class ScholarActivity : AppCompatActivity() {
             val okHttpClient = NetworkConnection.createOkHttpClient()
             val retrofit = NetworkConnection.createRetrofit(okHttpClient, "https://43.202.82.18:443")
             val ActService = retrofit.create(ManageService::class.java)
-            val dynamicUrl3 = "/scholarship/scrape"
+            val dynamicUrl3 = "api/v1/scholarship/scrape"
             val call2 = ActService.test(dynamicUrl3)
             call2.enqueue(object : Callback<JoinResponse> {
                 override fun onResponse(call: Call<JoinResponse>, response: Response<JoinResponse>) {
@@ -66,7 +66,7 @@ class ScholarActivity : AppCompatActivity() {
         val retrofit = NetworkConnection.createRetrofit(okHttpClient, "https://43.202.82.18:443")
         val ActService = retrofit.create(ManageService::class.java)
 
-        val dynamicUrl2 = "/scholarship/recommend?userId=$userId"
+        val dynamicUrl2 = "api/v1/scholarship/recommend?userId=$userId"
         val call = ActService.price_list(dynamicUrl2)
         call.enqueue(object : Callback<price_listResponse> {
             override fun onResponse(call: Call<price_listResponse>, response: Response<price_listResponse>) {

@@ -61,7 +61,7 @@ class CardRegisterActivity : AppCompatActivity() {
             val c_webpw = binding.cardPw.text.toString()
 
             //카드 연동하기
-            val dynamicUrl = "/account/card-regist?userId=$userid"
+            val dynamicUrl = "api/v1/account/card-regist?userId=$userid"
             val call = ActService.card_register(dynamicUrl, card_RegisterRequest("BC","P","9446038007099032", "woalsdl7399","driermine4625!"))
             call.enqueue(object : Callback<JoinResponse> {
                 override fun onResponse(call: Call<JoinResponse>, response: Response<JoinResponse>) {
