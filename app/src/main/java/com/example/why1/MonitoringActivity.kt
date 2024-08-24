@@ -43,7 +43,23 @@ class MonitoringActivity : AppCompatActivity() {
             override fun onResponse(call: Call<SmonitorRsponse>, response: Response<SmonitorRsponse>) {
                 val logs = response.body()
                 Log.d("monitor_s Result: ", "Response: $logs")
-
+                val money = response.body()?.totalConsumption
+                val bpct = response.body()?.percentageOfBudget
+                val cpct = response.body()?.percentageChange
+                val gpt = response.body()?.gptAdvice
+                val high = response.body()?.highestCategory
+                val hpct = response.body()?.highestCategoryPercent
+                val low = response.body()?.lowestCategory
+                val lpct = response.body()?.lowestCategoryPercent
+                if (logs != null){
+                    binding.mText7.text="현재 "+money+" 원 사용 "+"("+bpct+")"
+                    binding.mText8.text="저번달 대비 "+cpct+"% 증가"
+                    binding.mText9.text=gpt
+                    binding.mText10.text="최고 소비 카테고리: "+high
+                    binding.mText11.text="저번 달 대비 "+hpct+"% 증가"
+                    binding.mText12.text="최저 소비 카테고리: "+low
+                    binding.mText13.text="저번 달 대비 "+lpct+"% 감소"
+                }
 
             }
             override fun onFailure(call: Call<SmonitorRsponse>, t: Throwable) {
