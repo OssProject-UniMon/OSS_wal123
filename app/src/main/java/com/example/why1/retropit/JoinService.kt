@@ -5,6 +5,6 @@ import retrofit2.http.Body
 import retrofit2.http.POST
 
 interface JoinService {
-    @POST("/user/signup")
+    @POST("api/v1/user/signup")
     fun Register(@Body credential: JoinRequest) : Call<JoinResponse>
 }

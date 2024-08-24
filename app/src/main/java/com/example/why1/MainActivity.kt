@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
 
         //secure무시, 리트로핏 통신까지
         val okHttpClient = NetworkConnection.createOkHttpClient()
-        val retrofit = NetworkConnection.createRetrofit(okHttpClient, "https://43.202.82.18:443")
+        val retrofit = NetworkConnection.createRetrofit(okHttpClient, "https://a48c-110-35-169-230.ngrok-free.app/")
         val ActService = retrofit.create(ManageService::class.java)
 
         //시간표 불러오기 커넥션 - 주소수정 필요
@@ -81,7 +81,15 @@ class MainActivity : AppCompatActivity() {
             override fun onResponse(call: Call<MainResonse>, response: Response<MainResonse>) {
                 val logs = response.body()
                 Log.d("monitorResult: ", "Response: $logs")
+                var money = response.body()?.consumption
+                var percent = response.body()?.totalConsumptionPercent
+                var high = response.body()?.highestCategory
+                var hpercet = response.body()?.highestCategoryPercent
 
+                binding.cText1.text="현 소비량: "+money+"원"
+                binding.cText2.text="목표 금액의 "+percent+"% 사용"
+                binding.cText3.text="제일 높은 소비 카테고리: "+high
+                binding.cText4.text="카테고리 목표 금액의 "+hpercet+"% 사용"
 
             }
             override fun onFailure(call: Call<MainResonse>, t: Throwable) {

@@ -8,7 +8,7 @@ import retrofit2.http.Query
 import retrofit2.http.Url
 
 interface ManageService {
-    @POST("/user/login")
+    @POST("api/v1/user/login")
     fun login(@Body credential: LoginRequest) : Call<LoginResponse>
 
     @GET
@@ -49,4 +49,7 @@ interface ManageService {
 
     @POST
     fun smonitor(@Url url: String, @Body credential: MonitorRequest): Call<SmonitorRsponse>
+
+    @POST
+    fun dmonitor(@Url url: String, @Body credential: MonitorRequest): Call<DmonitorResponse>
 }

@@ -80,7 +80,7 @@ class JoinActivity : AppCompatActivity() {
         }
 
         val okHttpClient = NetworkConnection.createOkHttpClient()
-        val retrofit = NetworkConnection.createRetrofit(okHttpClient, "https://43.202.82.18:443") //secure무시, 리트로핏 통신까지
+        val retrofit = NetworkConnection.createRetrofit(okHttpClient, "https://a48c-110-35-169-230.ngrok-free.app/") //secure무시, 리트로핏 통신까지
         val JoinService = retrofit.create(JoinService::class.java)
         val Allservice = retrofit.create(ManageService::class.java)
 

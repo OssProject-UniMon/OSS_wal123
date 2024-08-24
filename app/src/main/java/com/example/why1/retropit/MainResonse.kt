@@ -6,5 +6,5 @@ data class MainResonse(
     @SerializedName("consumption") val consumption: Int,
     @SerializedName("totalConsumptionPercent") val totalConsumptionPercent: Int,
     @SerializedName("highestCategory") val highestCategory: String,
-    @SerializedName("additionalProp2") val additoanalProp2: Int,
+    @SerializedName("highestCategoryPercent") val highestCategoryPercent: Int,
 )

@@ -34,7 +34,7 @@ class MonitoringActivity : AppCompatActivity() {
 
         //secure무시, 리트로핏 통신까지
         val okHttpClient = NetworkConnection.createOkHttpClient()
-        val retrofit = NetworkConnection.createRetrofit(okHttpClient, "https://43.202.82.18:443")
+        val retrofit = NetworkConnection.createRetrofit(okHttpClient, "https://a48c-110-35-169-230.ngrok-free.app/")
         val ActService = retrofit.create(ManageService::class.java)
 
         val dynamicUrl3 = "api/v1/report/summary"

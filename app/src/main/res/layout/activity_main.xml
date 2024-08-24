@@ -152,7 +152,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
-                    android:text="N월 소비"
+                    android:text="8월 소비"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:textColor="@android:color/darker_gray"/>
@@ -161,7 +161,7 @@
                     android:layout_height="80dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="20dp"
-                    android:background="@drawable/icon_1"
+                    android:background="@drawable/icon_3"
                     android:scaleType="fitXY" />
                 <Button
                     android:id="@+id/btn3"
