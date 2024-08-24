@@ -58,7 +58,7 @@
                                 android:layout_width="100dp"
                                 android:layout_height="100dp"
                                 android:layout_marginTop="10dp"
-                                android:background="@drawable/icon_1"
+                                android:background="@drawable/icon_3"
                                 android:scaleType="fitXY" />
                             <LinearLayout
                                 android:layout_width="330dp"
@@ -90,7 +90,7 @@
                                 android:layout_width="100dp"
                                 android:layout_height="100dp"
                                 android:layout_marginTop="18dp"
-                                android:background="@drawable/icon_1"
+                                android:background="@drawable/icon_4"
                                 android:scaleType="fitXY" />
                             <LinearLayout
                                 android:layout_width="330dp"
@@ -141,17 +141,17 @@
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:layout_marginTop="10dp"
-                                android:background="@drawable/icon_1"
+                                android:background="@drawable/icon_4"
                                 android:scaleType="fitXY" />
                             <LinearLayout
-                                android:layout_width="330dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:orientation="vertical">
                                 <TextView
                                     android:id="@+id/mi_text14"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginTop="17dp"
+                                    android:layout_marginTop="11dp"
                                     android:text="음식점"
                                     android:textSize="13sp"
                                     android:textStyle="bold"
@@ -163,6 +163,36 @@
                                     android:text="목표금액: ???"
                                     android:textSize="10sp"
                                     android:textColor="#313131"/>
+                                <TextView
+                                    android:id="@+id/mi_food_bm"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="저번달 대비 ???% 증가"
+                                    android:textSize="10sp"
+                                    android:textColor="#313131"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="200dp"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+                                <ProgressBar
+                                    android:id="@+id/foodProgressBar"
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_marginTop="20dp"
+                                    android:max="100"
+                                    android:progress="0"
+                                    android:progressTint="#4CAF50"/>
+                                <TextView
+                                    android:id="@+id/mi_food_p"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="80%"
+                                    android:textSize="10sp"
+                                    android:layout_marginLeft="20dp"
+                                    android:textColor="#313131"/>
                             </LinearLayout>
                         </LinearLayout>
                         <LinearLayout
@@ -173,17 +203,17 @@
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:layout_marginTop="10dp"
-                                android:background="@drawable/icon_1"
+                                android:background="@drawable/icon_2"
                                 android:scaleType="fitXY" />
                             <LinearLayout
-                                android:layout_width="330dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:orientation="vertical">
                                 <TextView
                                     android:id="@+id/mi_text16"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginTop="17dp"
+                                    android:layout_marginTop="11dp"
                                     android:text="카페"
                                     android:textSize="13sp"
                                     android:textStyle="bold"
@@ -195,6 +225,36 @@
                                     android:text="목표금액: ???"
                                     android:textSize="10sp"
                                     android:textColor="#313131"/>
+                                <TextView
+                                    android:id="@+id/mi_cafe_bm"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="저번달 대비 ???% 증가"
+                                    android:textSize="10sp"
+                                    android:textColor="#313131"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="200dp"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+                            <ProgressBar
+                                android:id="@+id/cafeProgressBar"
+                                style="?android:attr/progressBarStyleHorizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="30dp"
+                                android:max="100"
+                                android:progress="0"
+                                android:progressTint="#FFC107"/>
+                                <TextView
+                                    android:id="@+id/mi_cafe_p"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="80%"
+                                    android:textSize="10sp"
+                                    android:layout_marginLeft="20dp"
+                                    android:textColor="#313131"/>
                             </LinearLayout>
                         </LinearLayout>
                         <LinearLayout
@@ -205,17 +265,17 @@
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:layout_marginTop="10dp"
-                                android:background="@drawable/icon_1"
+                                android:background="@drawable/icon_3"
                                 android:scaleType="fitXY" />
                             <LinearLayout
-                                android:layout_width="330dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:orientation="vertical">
                                 <TextView
                                     android:id="@+id/mi_text18"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginTop="17dp"
+                                    android:layout_marginTop="11dp"
                                     android:text="쇼핑"
                                     android:textSize="13sp"
                                     android:textStyle="bold"
@@ -227,6 +287,36 @@
                                     android:text="목표금액: ???"
                                     android:textSize="10sp"
                                     android:textColor="#313131"/>
+                                <TextView
+                                    android:id="@+id/mi_shop_bm"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="저번달 대비 ???% 증가"
+                                    android:textSize="10sp"
+                                    android:textColor="#313131"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="200dp"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+                            <ProgressBar
+                                android:id="@+id/shoppingProgressBar"
+                                style="?android:attr/progressBarStyleHorizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="30dp"
+                                android:max="100"
+                                android:progress="0"
+                                android:progressTint="#FF5722"/>
+                                <TextView
+                                    android:id="@+id/mi_shop_p"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="80%"
+                                    android:textSize="10sp"
+                                    android:layout_marginLeft="20dp"
+                                    android:textColor="#313131"/>
                             </LinearLayout>
                         </LinearLayout>
                         <LinearLayout
@@ -237,17 +327,17 @@
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:layout_marginTop="10dp"
-                                android:background="@drawable/icon_1"
+                                android:background="@drawable/icon_5"
                                 android:scaleType="fitXY" />
                             <LinearLayout
-                                android:layout_width="330dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:orientation="vertical">
                                 <TextView
                                     android:id="@+id/mi_text20"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginTop="17dp"
+                                    android:layout_marginTop="11dp"
                                     android:text="기타"
                                     android:textSize="13sp"
                                     android:textStyle="bold"
@@ -259,12 +349,41 @@
                                     android:text="목표금액: ???"
                                     android:textSize="10sp"
                                     android:textColor="#313131"/>
+                                <TextView
+                                    android:id="@+id/mi_else_bm"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="저번달 대비 ???% 증가"
+                                    android:textSize="10sp"
+                                    android:textColor="#313131"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="200dp"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+                            <ProgressBar
+                                android:id="@+id/etcProgressBar"
+                                style="?android:attr/progressBarStyleHorizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="30dp"
+                                android:max="100"
+                                android:progress="0"
+                                android:progressTint="#9C27B0"/>
+                                <TextView
+                                    android:id="@+id/mi_else_p"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="80%"
+                                    android:textSize="10sp"
+                                    android:layout_marginLeft="20dp"
+                                    android:textColor="#313131"/>
                             </LinearLayout>
                         </LinearLayout>
 
                     </LinearLayout>
                 </LinearLayout>
-
             </LinearLayout>
         </ScrollView>
     </LinearLayout>

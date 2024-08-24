@@ -43,4 +43,10 @@ interface ManageService {
 
     @GET
     fun ready(@Url url: String): Call<JoinResponse>
+
+    @GET
+    fun main_monitor(@Url url: String): Call<MainResonse>
+
+    @POST
+    fun smonitor(@Url url: String, @Body credential: MonitorRequest): Call<SmonitorRsponse>
 }

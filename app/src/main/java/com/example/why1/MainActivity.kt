@@ -19,6 +19,7 @@ import com.example.why1.appdata.AppData
 import com.example.why1.appdata.Schedule
 import com.example.why1.auth.NetworkConnection
 import com.example.why1.databinding.ActivityMainBinding
+import com.example.why1.retropit.MainResonse
 import com.example.why1.retropit.ManageService
 import com.example.why1.retropit.Sch_listResponse
 import com.example.why1.retropit.act_listResponse
@@ -43,7 +44,8 @@ class MainActivity : AppCompatActivity() {
         val retrofit = NetworkConnection.createRetrofit(okHttpClient, "https://43.202.82.18:443")
         val ActService = retrofit.create(ManageService::class.java)
 
-        val dynamicUrl2 = "/home?userId=$userId"
+        //시간표 불러오기 커넥션 - 주소수정 필요
+        val dynamicUrl2 = "api/v1/home?userId=$userId"
         val call = ActService.sch_list(dynamicUrl2)
         call.enqueue(object : Callback<Sch_listResponse> {
             override fun onResponse(call: Call<Sch_listResponse>, response: Response<Sch_listResponse>) {
@@ -67,6 +69,22 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<Sch_listResponse>, t: Throwable) {
+
+                Log.e("act_showlist", "Failed to send request to server. Error: ${t.message}")
+            }
+        })
+
+        //모니터링 데이터 커넥션
+        val dynamicUrl3 = "api/v1/home/monitoring?userId=$userId"
+        val call2 = ActService.main_monitor(dynamicUrl3)
+        call2.enqueue(object : Callback<MainResonse> {
+            override fun onResponse(call: Call<MainResonse>, response: Response<MainResonse>) {
+                val logs = response.body()
+                Log.d("monitorResult: ", "Response: $logs")
+
+
+            }
+            override fun onFailure(call: Call<MainResonse>, t: Throwable) {
 
                 Log.e("act_showlist", "Failed to send request to server. Error: ${t.message}")
             }
