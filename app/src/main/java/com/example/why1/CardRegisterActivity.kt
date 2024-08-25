@@ -31,7 +31,7 @@ class CardRegisterActivity : AppCompatActivity() {
 
         //secure무시, 리트로핏 통신까지
         val okHttpClient = NetworkConnection.createOkHttpClient()
-        val retrofit = NetworkConnection.createRetrofit(okHttpClient, "https://43.202.82.18:443")
+        val retrofit = NetworkConnection.createRetrofit(okHttpClient, "https://fb23-110-35-169-230.ngrok-free.app")
         val ActService = retrofit.create(ManageService::class.java)
 
         val userid = AppData.S_userId //유저 아이디 불러오기
@@ -61,8 +61,8 @@ class CardRegisterActivity : AppCompatActivity() {
             val c_webpw = binding.cardPw.text.toString()
 
             //카드 연동하기
-            val dynamicUrl = "api/v1/account/card-regist?userId=$userid"
-            val call = ActService.card_register(dynamicUrl, card_RegisterRequest("BC","P","9446038007099032", "woalsdl7399","driermine4625!"))
+            val dynamicUrl = "api/v1/card/card-regist?userId=$userid"
+            val call = ActService.card_register(dynamicUrl, card_RegisterRequest("SHINHAN","P","4890230019175114", "woalsdl7399","driermine7399!"))
             call.enqueue(object : Callback<JoinResponse> {
                 override fun onResponse(call: Call<JoinResponse>, response: Response<JoinResponse>) {
                     val serverResponse = response.body()

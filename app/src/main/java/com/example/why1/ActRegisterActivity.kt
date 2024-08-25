@@ -29,7 +29,7 @@ class ActRegisterActivity : AppCompatActivity() {
 
         //secure무시, 리트로핏 통신까지
         val okHttpClient = NetworkConnection.createOkHttpClient()
-        val retrofit = NetworkConnection.createRetrofit(okHttpClient, "https://43.202.82.18:443")
+        val retrofit = NetworkConnection.createRetrofit(okHttpClient, "https://fb23-110-35-169-230.ngrok-free.app")
         val ActService = retrofit.create(ManageService::class.java)
 
         val userid = AppData.S_userId //유저 아이디 불러오기
@@ -64,7 +64,7 @@ class ActRegisterActivity : AppCompatActivity() {
 
             //계좌 연동하기, 일단 임시로 리퀘스트값 채웠음,버튼 누르면 서버통신 ,나중에 변수로 바꿔
             val dynamicUrl = "api/v1/account/account-regist?userId=$userid"
-            val call = ActService.act_register(dynamicUrl, act_RegisterRequest("IBK","P","98003545601011", "4625","","","001031"))
+            val call = ActService.act_register(dynamicUrl, act_RegisterRequest("SHINHAN","P","110500411959", "4625","JKM2731","driermine4625.",""))
             call.enqueue(object : Callback<JoinResponse> {
                 override fun onResponse(call: Call<JoinResponse>, response: Response<JoinResponse>) {
                     val serverResponse = response.body()

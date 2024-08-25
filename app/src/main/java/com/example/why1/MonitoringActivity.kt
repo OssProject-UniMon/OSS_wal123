@@ -34,7 +34,7 @@ class MonitoringActivity : AppCompatActivity() {
 
         //secure무시, 리트로핏 통신까지
         val okHttpClient = NetworkConnection.createOkHttpClient()
-        val retrofit = NetworkConnection.createRetrofit(okHttpClient, "https://a48c-110-35-169-230.ngrok-free.app/")
+        val retrofit = NetworkConnection.createRetrofit(okHttpClient, "https://fb23-110-35-169-230.ngrok-free.app")
         val ActService = retrofit.create(ManageService::class.java)
 
         val dynamicUrl3 = "api/v1/report/summary"
@@ -52,7 +52,7 @@ class MonitoringActivity : AppCompatActivity() {
                 val low = response.body()?.lowestCategory
                 val lpct = response.body()?.lowestCategoryPercent
                 if (logs != null){
-                    binding.mText7.text="현재 "+money+" 원 사용 "+"("+bpct+")"
+                    binding.mText7.text="현재 "+money+" 원 사용 "+"("+bpct+"%)"
                     binding.mText8.text="저번달 대비 "+cpct+"% 증가"
                     binding.mText9.text=gpt
                     binding.mText10.text="최고 소비 카테고리: "+high
