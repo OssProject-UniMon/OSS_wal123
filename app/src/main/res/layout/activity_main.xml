@@ -27,8 +27,17 @@
                 android:id="@+id/imageView3"
                 android:layout_width="wrap_content"
                 android:layout_height="108dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/applogo_light" />
+                app:srcCompat="@drawable/app_main" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="UNIMON"
+                android:layout_marginTop="20dp"
+                android:textSize="40sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
         </LinearLayout>
 
         <TextView
@@ -55,17 +64,19 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="370dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/wal"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bubble_user"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/title2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
                 android:text="UniMon의 핵심기능!! 나만의 비서AI"
                 android:textSize="18sp"
                 android:textStyle="bold"
@@ -76,7 +87,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="지금 비서AI와 채팅을 주고받으며 조언을 구하세요!"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="10dp"
                 android:textSize="14sp"
                 android:textColor="@android:color/darker_gray"
                 android:layout_marginTop="4dp"/>
@@ -94,17 +105,19 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="370dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/wal"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bubble_user"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
                 android:text="UniMon의 장학금 추천!"
                 android:textSize="18sp"
                 android:textStyle="bold"
@@ -115,7 +128,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="지금 누릴수 있는 장학금 혜택을 확인해보세요!"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="10dp"
                 android:textSize="14sp"
                 android:textColor="@android:color/darker_gray"
                 android:layout_marginTop="4dp"/>
