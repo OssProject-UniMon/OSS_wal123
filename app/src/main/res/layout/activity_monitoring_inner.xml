@@ -192,7 +192,7 @@
                                 <ProgressBar
                                     android:id="@+id/foodProgressBar"
                                     style="?android:attr/progressBarStyleHorizontal"
-                                    android:layout_width="match_parent"
+                                    android:layout_width="150dp"
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="20dp"
                                     android:layout_marginTop="20dp"
@@ -254,7 +254,7 @@
                             <ProgressBar
                                 android:id="@+id/cafeProgressBar"
                                 style="?android:attr/progressBarStyleHorizontal"
-                                android:layout_width="match_parent"
+                                android:layout_width="150dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="20dp"
                                 android:layout_marginTop="30dp"
@@ -316,7 +316,7 @@
                             <ProgressBar
                                 android:id="@+id/shoppingProgressBar"
                                 style="?android:attr/progressBarStyleHorizontal"
-                                android:layout_width="match_parent"
+                                android:layout_width="150dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="20dp"
                                 android:layout_marginTop="30dp"
@@ -378,7 +378,7 @@
                             <ProgressBar
                                 android:id="@+id/etcProgressBar"
                                 style="?android:attr/progressBarStyleHorizontal"
-                                android:layout_width="match_parent"
+                                android:layout_width="150dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="20dp"
                                 android:layout_marginTop="30dp"
@@ -440,7 +440,7 @@
                                 <ProgressBar
                                     android:id="@+id/someProgressBar"
                                     style="?android:attr/progressBarStyleHorizontal"
-                                    android:layout_width="match_parent"
+                                    android:layout_width="150dp"
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="20dp"
                                     android:layout_marginTop="30dp"
@@ -502,7 +502,7 @@
                                 <ProgressBar
                                     android:id="@+id/personProgressBar"
                                     style="?android:attr/progressBarStyleHorizontal"
-                                    android:layout_width="match_parent"
+                                    android:layout_width="150dp"
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="20dp"
                                     android:layout_marginTop="30dp"
@@ -564,7 +564,7 @@
                                 <ProgressBar
                                     android:id="@+id/transProgressBar"
                                     style="?android:attr/progressBarStyleHorizontal"
-                                    android:layout_width="match_parent"
+                                    android:layout_width="150dp"
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="20dp"
                                     android:layout_marginTop="30dp"
@@ -626,7 +626,7 @@
                                 <ProgressBar
                                     android:id="@+id/mediProgressBar"
                                     style="?android:attr/progressBarStyleHorizontal"
-                                    android:layout_width="match_parent"
+                                    android:layout_width="150dp"
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="20dp"
                                     android:layout_marginTop="30dp"
@@ -688,7 +688,7 @@
                                 <ProgressBar
                                     android:id="@+id/subProgressBar"
                                     style="?android:attr/progressBarStyleHorizontal"
-                                    android:layout_width="match_parent"
+                                    android:layout_width="150dp"
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="20dp"
                                     android:layout_marginTop="30dp"
@@ -750,7 +750,7 @@
                                 <ProgressBar
                                     android:id="@+id/munProgressBar"
                                     style="?android:attr/progressBarStyleHorizontal"
-                                    android:layout_width="match_parent"
+                                    android:layout_width="150dp"
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="20dp"
                                     android:layout_marginTop="30dp"
@@ -812,7 +812,7 @@
                                 <ProgressBar
                                     android:id="@+id/edueProgressBar"
                                     style="?android:attr/progressBarStyleHorizontal"
-                                    android:layout_width="match_parent"
+                                    android:layout_width="150dp"
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="20dp"
                                     android:layout_marginTop="30dp"
@@ -874,7 +874,7 @@
                                 <ProgressBar
                                     android:id="@+id/bohumProgressBar"
                                     style="?android:attr/progressBarStyleHorizontal"
-                                    android:layout_width="match_parent"
+                                    android:layout_width="150dp"
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="20dp"
                                     android:layout_marginTop="30dp"
@@ -936,7 +936,7 @@
                                 <ProgressBar
                                     android:id="@+id/sukProgressBar"
                                     style="?android:attr/progressBarStyleHorizontal"
-                                    android:layout_width="match_parent"
+                                    android:layout_width="150dp"
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="20dp"
                                     android:layout_marginTop="30dp"
@@ -998,7 +998,7 @@
                                 <ProgressBar
                                     android:id="@+id/sportsProgressBar"
                                     style="?android:attr/progressBarStyleHorizontal"
-                                    android:layout_width="match_parent"
+                                    android:layout_width="150dp"
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="20dp"
                                     android:layout_marginTop="30dp"
@@ -1060,7 +1060,7 @@
                                 <ProgressBar
                                     android:id="@+id/orakProgressBar"
                                     style="?android:attr/progressBarStyleHorizontal"
-                                    android:layout_width="match_parent"
+                                    android:layout_width="150dp"
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="20dp"
                                     android:layout_marginTop="30dp"

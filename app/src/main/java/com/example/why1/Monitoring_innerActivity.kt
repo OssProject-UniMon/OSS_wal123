@@ -45,7 +45,7 @@ class Monitoring_innerActivity : AppCompatActivity() {
 
         //secure무시, 리트로핏 통신까지
         val okHttpClient = NetworkConnection.createOkHttpClient()
-        val retrofit = NetworkConnection.createRetrofit(okHttpClient, "https://fb23-110-35-169-230.ngrok-free.app")
+        val retrofit = NetworkConnection.createRetrofit(okHttpClient, "https://8fb9-110-35-169-230.ngrok-free.app")
         val ActService = retrofit.create(ManageService::class.java)
 
         val dynamicUrl3 = "api/v1/report/detail"
@@ -143,6 +143,110 @@ class Monitoring_innerActivity : AppCompatActivity() {
                         somePercent = percentage_some
                         val someProgressBar = findViewById<ProgressBar>(R.id.someProgressBar)
                         someProgressBar.progress = somePercent
+                    }
+                }
+                val goals_sub = response.body()?.subCategoryChangeBudget //목표 금액
+                val percentage_sub = response.body()?.subCategoryChangeUsePercent // 사용 퍼센트
+                val before_sub = response.body()?.subCategoryChangePercent // 지난달 대비 오른 퍼센트
+                if (logs != null){ // 저번달 대비 증가, 감소 판단하는것도 추가해야함
+                    binding.miText32.text="목표금액: "+goals_sub
+                    binding.miSubBm.text="저번달 대비 "+before_sub+"% 증가"
+                    binding.miSubP.text="현재"+percentage_sub+"%"
+                    if (percentage_sub != null) { // 막대그래프 업데이트
+                        subPercent = percentage_sub
+                        val subProgressBar = findViewById<ProgressBar>(R.id.subProgressBar)
+                        subProgressBar.progress = subPercent
+                    }
+                }
+                val goals_medi = response.body()?.medicalCategoryChangeBudget //목표 금액
+                val percentage_medi = response.body()?.medicalCategoryChangeUsePercent // 사용 퍼센트
+                val before_medi = response.body()?.medicalCategoryChangePercent // 지난달 대비 오른 퍼센트
+                if (logs != null){ // 저번달 대비 증가, 감소 판단하는것도 추가해야함
+                    binding.miText29.text="목표금액: "+goals_medi
+                    binding.miMediBm.text="저번달 대비 "+before_medi+"% 증가"
+                    binding.miMediP.text="현재"+percentage_medi+"%"
+                    if (percentage_medi != null) { // 막대그래프 업데이트
+                        mediPercent = percentage_medi
+                        val mediProgressBar = findViewById<ProgressBar>(R.id.mediProgressBar)
+                        mediProgressBar.progress = mediPercent
+                    }
+                }
+                val goals_mun = response.body()?.cultureCategoryChangeBudget //목표 금액
+                val percentage_mun = response.body()?.cultureCategoryChangeUsePercent // 사용 퍼센트
+                val before_mun = response.body()?.cultureCategoryChangePercent // 지난달 대비 오른 퍼센트
+                if (logs != null){ // 저번달 대비 증가, 감소 판단하는것도 추가해야함
+                    binding.miText34.text="목표금액: "+goals_mun
+                    binding.miMunBm.text="저번달 대비 "+before_mun+"% 증가"
+                    binding.miMunP.text="현재"+percentage_mun+"%"
+                    if (percentage_mun != null) { // 막대그래프 업데이트
+                        munPercent = percentage_mun
+                        val munProgressBar = findViewById<ProgressBar>(R.id.munProgressBar)
+                        munProgressBar.progress = munPercent
+                    }
+                }
+                val goals_edue = response.body()?.eduCategoryChangeBudget //목표 금액
+                val percentage_edue = response.body()?.eduCategoryChangeUsePercent // 사용 퍼센트
+                val before_edue = response.body()?.eduCategoryChangePercent // 지난달 대비 오른 퍼센트
+                if (logs != null){ // 저번달 대비 증가, 감소 판단하는것도 추가해야함
+                    binding.miText36.text="목표금액: "+goals_edue
+                    binding.miEdueBm.text="저번달 대비 "+before_edue+"% 증가"
+                    binding.miEdueP.text="현재"+percentage_edue+"%"
+                    if (percentage_edue != null) { // 막대그래프 업데이트
+                        eduePercent = percentage_edue
+                        val edueProgressBar = findViewById<ProgressBar>(R.id.edueProgressBar)
+                        edueProgressBar.progress = eduePercent
+                    }
+                }
+                val goals_bohum = response.body()?.insuranceCategoryChangeBudget //목표 금액
+                val percentage_bohum = response.body()?.insuranceCategoryChangeUsePercent // 사용 퍼센트
+                val before_bohum = response.body()?.insuranceCategoryChangePercent // 지난달 대비 오른 퍼센트
+                if (logs != null){ // 저번달 대비 증가, 감소 판단하는것도 추가해야함
+                    binding.miText38.text="목표금액: "+goals_bohum
+                    binding.miBohumBm.text="저번달 대비 "+before_bohum+"% 증가"
+                    binding.miBohumP.text="현재"+percentage_bohum+"%"
+                    if (percentage_bohum != null) { // 막대그래프 업데이트
+                        bohumPercent = percentage_bohum
+                        val bohumProgressBar = findViewById<ProgressBar>(R.id.bohumProgressBar)
+                        bohumProgressBar.progress = bohumPercent
+                    }
+                }
+                val goals_suk = response.body()?.accommodationCategoryChangeBudget //목표 금액
+                val percentage_suk = response.body()?.accommodationCategoryChangeUsePercent // 사용 퍼센트
+                val before_suk = response.body()?.accommodationCategoryChangePercent // 지난달 대비 오른 퍼센트
+                if (logs != null){ // 저번달 대비 증가, 감소 판단하는것도 추가해야함
+                    binding.miText40.text="목표금액: "+goals_suk
+                    binding.miSukBm.text="저번달 대비 "+before_suk+"% 증가"
+                    binding.miSukP.text="현재"+percentage_suk+"%"
+                    if (percentage_suk != null) { // 막대그래프 업데이트
+                        sukPercent = percentage_suk
+                        val sukProgressBar = findViewById<ProgressBar>(R.id.sukProgressBar)
+                        sukProgressBar.progress = sukPercent
+                    }
+                }
+                val goals_sports = response.body()?.sportsCategoryChangeBudget //목표 금액
+                val percentage_sports = response.body()?.sportsCategoryChangeUsePercent // 사용 퍼센트
+                val before_sports = response.body()?.sportsCategoryChangePercent // 지난달 대비 오른 퍼센트
+                if (logs != null){ // 저번달 대비 증가, 감소 판단하는것도 추가해야함
+                    binding.miText42.text="목표금액: "+goals_sports
+                    binding.miSportsBm.text="저번달 대비 "+before_sports+"% 증가"
+                    binding.miSportsP.text="현재"+percentage_sports+"%"
+                    if (percentage_sports != null) { // 막대그래프 업데이트
+                        sportsPercent = percentage_sports
+                        val sportsProgressBar = findViewById<ProgressBar>(R.id.sportsProgressBar)
+                        sportsProgressBar.progress = sportsPercent
+                    }
+                }
+                val goals_orak = response.body()?.entertainmentCategoryChangeBudget //목표 금액
+                val percentage_orak = response.body()?.entertainmentCategoryChangeUsePercent // 사용 퍼센트
+                val before_orak = response.body()?.entertainmentCategoryChangePercent // 지난달 대비 오른 퍼센트
+                if (logs != null){ // 저번달 대비 증가, 감소 판단하는것도 추가해야함
+                    binding.miText44.text="목표금액: "+goals_orak
+                    binding.miOrakBm.text="저번달 대비 "+before_orak+"% 증가"
+                    binding.miOrakP.text="현재"+percentage_orak+"%"
+                    if (percentage_orak != null) { // 막대그래프 업데이트
+                        orakPercent = percentage_orak
+                        val orakProgressBar = findViewById<ProgressBar>(R.id.orakProgressBar)
+                        orakProgressBar.progress = orakPercent
                     }
                 }
             }

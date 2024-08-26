@@ -34,7 +34,7 @@ class MonitoringActivity : AppCompatActivity() {
 
         //secure무시, 리트로핏 통신까지
         val okHttpClient = NetworkConnection.createOkHttpClient()
-        val retrofit = NetworkConnection.createRetrofit(okHttpClient, "https://fb23-110-35-169-230.ngrok-free.app")
+        val retrofit = NetworkConnection.createRetrofit(okHttpClient, "https://8fb9-110-35-169-230.ngrok-free.app")
         val ActService = retrofit.create(ManageService::class.java)
 
         val dynamicUrl3 = "api/v1/report/summary"
@@ -60,7 +60,12 @@ class MonitoringActivity : AppCompatActivity() {
                     binding.mText12.text="최저 소비 카테고리: "+low
                     binding.mText13.text="저번 달 대비 "+lpct+"% 감소"
                 }
-
+                if(hpct == 999999){
+                    binding.mText8.text="저번달의 데이터가 존재하지 않습니다."
+                    binding.mText11.text="저번달의 데이터가 존재하지 않습니다."
+                    binding.mText13.text="저번달의 데이터가 존재하지 않습니다."
+                }
+                //9999999 면 이번달 최초사용 태그
             }
             override fun onFailure(call: Call<SmonitorRsponse>, t: Throwable) {
                 Log.e("error", "Failed to send request to server. Error: ${t.message}")

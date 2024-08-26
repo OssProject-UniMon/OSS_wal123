@@ -109,7 +109,7 @@ class moneyActivity : AppCompatActivity() {
 
         //secure무시, 리트로핏 통신까지
         val okHttpClient = NetworkConnection.createOkHttpClient()
-        val retrofit = NetworkConnection.createRetrofit(okHttpClient, "https://43.202.82.18:443")
+        val retrofit = NetworkConnection.createRetrofit(okHttpClient, "https://8fb9-110-35-169-230.ngrok-free.app")
         val ActService = retrofit.create(ManageService::class.java)
 
 
@@ -166,12 +166,12 @@ class moneyActivity : AppCompatActivity() {
         }
 
         restart_btn.setOnClickListener {
-            val dynamicUrl3 = "api/v1/account/test?userId=$userId"
+            val dynamicUrl3 = "api/v1/log/test?userId=$userId"
             val call2 = ActService.test_actlist(dynamicUrl3)
             call2.enqueue(object : Callback<act_listResponse> {
                 override fun onResponse(call: Call<act_listResponse>, response: Response<act_listResponse>) {
                     val logs = response.body()?.logList
-                    Log.d("moneyResult: ", "Response: $logs")
+                    Log.d("restartResult: ", "Response: $logs")
 
                     var count = 1
                     logs?.forEach { log ->

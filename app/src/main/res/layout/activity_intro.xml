@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="560dp"
             android:scaleType="fitXY"
-            app:srcCompat="@drawable/app_new2" />
+            app:srcCompat="@drawable/app_v1_splash" />
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="150dp"
