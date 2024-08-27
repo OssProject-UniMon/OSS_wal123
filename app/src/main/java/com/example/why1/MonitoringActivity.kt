@@ -66,6 +66,11 @@ class MonitoringActivity : AppCompatActivity() {
                     binding.mText13.text="저번달의 데이터가 존재하지 않습니다."
                 }
                 //9999999 면 이번달 최초사용 태그
+                else if(hpct == 9999999){
+                    binding.mText8.text="이번달 최초 사용 태그"
+                    binding.mText11.text="이번달 최초 사용 태그"
+                    binding.mText13.text="이번달 최초 사용 태그"
+                }
             }
             override fun onFailure(call: Call<SmonitorRsponse>, t: Throwable) {
                 Log.e("error", "Failed to send request to server. Error: ${t.message}")
