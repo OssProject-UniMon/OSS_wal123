@@ -1,5 +1,7 @@
 package com.example.why1
 
+import android.content.res.ColorStateList
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -65,6 +67,18 @@ class Monitoring_innerActivity : AppCompatActivity() {
                         foodPercent = percentage_food
                         val foodProgressBar = findViewById<ProgressBar>(R.id.foodProgressBar)
                         foodProgressBar.progress = foodPercent
+                        if(foodPercent>80){
+                            binding.foodProgressBar.progressTintList = ColorStateList.valueOf(Color.parseColor("#FF5722"))
+                        }
+                        else if(foodPercent>50){
+                            binding.foodProgressBar.progressTintList = ColorStateList.valueOf(Color.parseColor("#FFC107"))
+                        }
+                        else if(foodPercent>25){
+                            binding.foodProgressBar.progressTintList = ColorStateList.valueOf(Color.parseColor("#9C27B0"))
+                        }
+                        else{
+                            binding.foodProgressBar.progressTintList = ColorStateList.valueOf(Color.parseColor("#4CAF50"))
+                        }
                     }
                 }
                 val goals_cafe = response.body()?.cafeCategoryChangeBudget //목표 금액

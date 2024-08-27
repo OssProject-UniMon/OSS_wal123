@@ -170,6 +170,7 @@
                     android:textStyle="bold"
                     android:textColor="@android:color/darker_gray"/>
                 <ImageView
+                    android:id="@+id/main_cicon"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_marginLeft="10dp"

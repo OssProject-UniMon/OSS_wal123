@@ -38,6 +38,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val nickname = AppData.user_nick
         val userId = AppData.S_userId
+        val accesscode = AppData.Access_code
 
         //secure무시, 리트로핏 통신까지
         val okHttpClient = NetworkConnection.createOkHttpClient()
@@ -90,6 +91,16 @@ class MainActivity : AppCompatActivity() {
                 binding.cText2.text="목표 금액의 "+percent+"% 사용"
                 binding.cText3.text="제일 높은 소비 카테고리: "+high
                 binding.cText4.text="카테고리 목표 금액의 "+hpercet+"% 사용"
+
+                if(accesscode == 0){
+                    binding.cText1.text="현재 등록된 계좌가 없습니다."
+                    binding.cText2.text="지금 계좌를 연결하세요!"
+                    binding.cText3.text="계좌를 연결하면 Unimon의"
+                    binding.cText4.text="기능들을 사용하실 수 있습니다."
+                    binding.month.text="모니터링"
+                    binding.mainCicon.setBackgroundResource(R.drawable.icon_1)
+                }
+
 
             }
             override fun onFailure(call: Call<MainResonse>, t: Throwable) {

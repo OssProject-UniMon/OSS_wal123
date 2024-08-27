@@ -651,7 +651,7 @@
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:layout_marginTop="10dp"
-                                android:background="@drawable/icon_5"
+                                android:background="@drawable/icon_net"
                                 android:scaleType="fitXY" />
                             <LinearLayout
                                 android:layout_width="wrap_content"
@@ -775,7 +775,7 @@
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:layout_marginTop="10dp"
-                                android:background="@drawable/icon_5"
+                                android:background="@drawable/icon_edu"
                                 android:scaleType="fitXY" />
                             <LinearLayout
                                 android:layout_width="wrap_content"
@@ -837,7 +837,7 @@
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:layout_marginTop="10dp"
-                                android:background="@drawable/icon_5"
+                                android:background="@drawable/icon_bo"
                                 android:scaleType="fitXY" />
                             <LinearLayout
                                 android:layout_width="wrap_content"
@@ -899,7 +899,7 @@
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:layout_marginTop="10dp"
-                                android:background="@drawable/icon_5"
+                                android:background="@drawable/icon_suk"
                                 android:scaleType="fitXY" />
                             <LinearLayout
                                 android:layout_width="wrap_content"
@@ -961,7 +961,7 @@
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:layout_marginTop="10dp"
-                                android:background="@drawable/icon_5"
+                                android:background="@drawable/icon_sports"
                                 android:scaleType="fitXY" />
                             <LinearLayout
                                 android:layout_width="wrap_content"
@@ -1023,7 +1023,7 @@
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:layout_marginTop="10dp"
-                                android:background="@drawable/icon_5"
+                                android:background="@drawable/icon_game"
                                 android:scaleType="fitXY" />
                             <LinearLayout
                                 android:layout_width="wrap_content"
