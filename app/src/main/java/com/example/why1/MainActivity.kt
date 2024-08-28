@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
 
         //secure무시, 리트로핏 통신까지
         val okHttpClient = NetworkConnection.createOkHttpClient()
-        val retrofit = NetworkConnection.createRetrofit(okHttpClient, "https://8fb9-110-35-169-230.ngrok-free.app")
+        val retrofit = NetworkConnection.createRetrofit(okHttpClient, "https://d6ff-122-42-81-30.ngrok-free.app")
         val ActService = retrofit.create(ManageService::class.java)
 
         //시간표 불러오기 커넥션 - 주소수정 필요

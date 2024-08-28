@@ -34,11 +34,11 @@ class MonitoringActivity : AppCompatActivity() {
 
         //secure무시, 리트로핏 통신까지
         val okHttpClient = NetworkConnection.createOkHttpClient()
-        val retrofit = NetworkConnection.createRetrofit(okHttpClient, "https://8fb9-110-35-169-230.ngrok-free.app")
+        val retrofit = NetworkConnection.createRetrofit(okHttpClient, "https://d6ff-122-42-81-30.ngrok-free.app")
         val ActService = retrofit.create(ManageService::class.java)
 
         val dynamicUrl3 = "api/v1/report/summary"
-        val call2 = ActService.smonitor(dynamicUrl3, MonitorRequest(userId,"20240824"))
+        val call2 = ActService.smonitor(dynamicUrl3, MonitorRequest(userId,"20240828"))
         call2.enqueue(object : Callback<SmonitorRsponse> {
             override fun onResponse(call: Call<SmonitorRsponse>, response: Response<SmonitorRsponse>) {
                 val logs = response.body()
@@ -59,6 +59,97 @@ class MonitoringActivity : AppCompatActivity() {
                     binding.mText11.text="저번 달 대비 "+hpct+"% 증가"
                     binding.mText12.text="최저 소비 카테고리: "+low
                     binding.mText13.text="저번 달 대비 "+lpct+"% 감소"
+
+                    if(high == "문화"){
+                        binding.hicon.setBackgroundResource(R.drawable.icon_mun)
+                    }
+                    else if(high == "카페"){
+                        binding.hicon.setBackgroundResource(R.drawable.icon_2)
+                    }
+                    else if(high == "음식점"){
+                        binding.hicon.setBackgroundResource(R.drawable.icon_4)
+                    }
+                    else if(high == "잡화소매"){
+                        binding.hicon.setBackgroundResource(R.drawable.icon_con)
+                    }
+                    else if(high == "쇼핑"){
+                        binding.hicon.setBackgroundResource(R.drawable.icon_3)
+                    }
+                    else if(high == "이체"){
+                        binding.hicon.setBackgroundResource(R.drawable.icon_b)
+                    }
+                    else if(high == "교통비"){
+                        binding.hicon.setBackgroundResource(R.drawable.icon_bus)
+                    }
+                    else if(high == "의료비"){
+                        binding.hicon.setBackgroundResource(R.drawable.icon_medi)
+                    }
+                    else if(high == "구독/정기결제"){
+                        binding.hicon.setBackgroundResource(R.drawable.icon_net)
+                    }
+                    else if(high == "교육비"){
+                        binding.hicon.setBackgroundResource(R.drawable.icon_edu)
+                    }
+                    else if(high == "보험비"){
+                        binding.hicon.setBackgroundResource(R.drawable.icon_bo)
+                    }
+                    else if(high == "숙박비"){
+                        binding.hicon.setBackgroundResource(R.drawable.icon_suk)
+                    }
+                    else if(high == "스포츠"){
+                        binding.hicon.setBackgroundResource(R.drawable.icon_sports)
+                    }
+                    else if(high == "오락"){
+                        binding.hicon.setBackgroundResource(R.drawable.icon_game)
+                    }
+                    else{
+                        binding.hicon.setBackgroundResource(R.drawable.icon_5)
+                    }
+                    if(low == "문화"){
+                        binding.licon.setBackgroundResource(R.drawable.icon_mun)
+                    }
+                    else if(low == "카페"){
+                        binding.licon.setBackgroundResource(R.drawable.icon_2)
+                    }
+                    else if(low == "음식점"){
+                        binding.licon.setBackgroundResource(R.drawable.icon_4)
+                    }
+                    else if(low == "잡화소매"){
+                        binding.licon.setBackgroundResource(R.drawable.icon_con)
+                    }
+                    else if(low == "쇼핑"){
+                        binding.licon.setBackgroundResource(R.drawable.icon_3)
+                    }
+                    else if(low == "이체"){
+                        binding.licon.setBackgroundResource(R.drawable.icon_b)
+                    }
+                    else if(low == "교통비"){
+                        binding.licon.setBackgroundResource(R.drawable.icon_bus)
+                    }
+                    else if(low == "의료비"){
+                        binding.licon.setBackgroundResource(R.drawable.icon_medi)
+                    }
+                    else if(low == "구독/정기결제"){
+                        binding.licon.setBackgroundResource(R.drawable.icon_net)
+                    }
+                    else if(low == "교육비"){
+                        binding.licon.setBackgroundResource(R.drawable.icon_edu)
+                    }
+                    else if(low == "보험비"){
+                        binding.licon.setBackgroundResource(R.drawable.icon_bo)
+                    }
+                    else if(low == "숙박비"){
+                        binding.licon.setBackgroundResource(R.drawable.icon_suk)
+                    }
+                    else if(low == "스포츠"){
+                        binding.licon.setBackgroundResource(R.drawable.icon_sports)
+                    }
+                    else if(low == "오락"){
+                        binding.licon.setBackgroundResource(R.drawable.icon_game)
+                    }
+                    else{
+                        binding.licon.setBackgroundResource(R.drawable.icon_5)
+                    }
                 }
                 if(hpct == 999999){
                     binding.mText8.text="저번달의 데이터가 존재하지 않습니다."
@@ -67,9 +158,9 @@ class MonitoringActivity : AppCompatActivity() {
                 }
                 //9999999 면 이번달 최초사용 태그
                 else if(hpct == 9999999){
-                    binding.mText8.text="이번달 최초 사용 태그"
-                    binding.mText11.text="이번달 최초 사용 태그"
-                    binding.mText13.text="이번달 최초 사용 태그"
+                    binding.mText8.text="최초 사용 태그"
+                    binding.mText11.text="최초 사용 태그"
+                    binding.mText13.text="최초 사용 태그"
                 }
             }
             override fun onFailure(call: Call<SmonitorRsponse>, t: Throwable) {

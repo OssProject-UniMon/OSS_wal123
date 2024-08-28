@@ -175,7 +175,7 @@
                     android:layout_height="80dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="20dp"
-                    android:background="@drawable/icon_3"
+                    android:background="@drawable/icon_4"
                     android:scaleType="fitXY" />
                 <Button
                     android:id="@+id/btn3"

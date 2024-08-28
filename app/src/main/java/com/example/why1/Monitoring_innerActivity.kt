@@ -47,15 +47,124 @@ class Monitoring_innerActivity : AppCompatActivity() {
 
         //secure무시, 리트로핏 통신까지
         val okHttpClient = NetworkConnection.createOkHttpClient()
-        val retrofit = NetworkConnection.createRetrofit(okHttpClient, "https://8fb9-110-35-169-230.ngrok-free.app")
+        val retrofit = NetworkConnection.createRetrofit(okHttpClient, "https://d6ff-122-42-81-30.ngrok-free.app")
         val ActService = retrofit.create(ManageService::class.java)
 
         val dynamicUrl3 = "api/v1/report/detail"
-        val call2 = ActService.dmonitor(dynamicUrl3, MonitorRequest(userId,"20240824"))
+        val call2 = ActService.dmonitor(dynamicUrl3, MonitorRequest(userId,"20240828"))
         call2.enqueue(object : Callback<DmonitorResponse> {
             override fun onResponse(call: Call<DmonitorResponse>, response: Response<DmonitorResponse>) {
                 val logs = response.body()
                 Log.d("monitor_d Result: ", "Response: $logs")
+                val high = response.body()?.highestCategory
+                val hper = response.body()?.highestCategoryPercent
+                val low = response.body()?.lowestCategory
+                val lper = response.body()?.lowestCategoryPercent
+                if (logs != null){
+                    binding.miText10.text="최고 소비 카테고리: "+high
+                    binding.miText11.text="전달 대비 "+hper+"% 증가"
+                    binding.miText12.text="최저 소비 카테고리 "+low+"% 증가"
+                    binding.miText13.text="전달 대비 "+lper+"% 증가"
+                    if(hper == 9999999){
+                        binding.miText11.text="이번달 최초 사용 태그"
+                        if(lper == 9999999){
+                            binding.miText13.text="이번달 최초 사용 태그"
+                        }
+                    }
+                    else if(lper == 9999999){
+                        binding.miText13.text="이번달 최초 사용 태그"
+                    }
+                    if(high == "문화"){
+                        binding.hicon.setBackgroundResource(R.drawable.icon_mun)
+                    }
+                    else if(high == "카페"){
+                        binding.hicon.setBackgroundResource(R.drawable.icon_2)
+                    }
+                    else if(high == "음식점"){
+                        binding.hicon.setBackgroundResource(R.drawable.icon_4)
+                    }
+                    else if(high == "잡화소매"){
+                        binding.hicon.setBackgroundResource(R.drawable.icon_con)
+                    }
+                    else if(high == "쇼핑"){
+                        binding.hicon.setBackgroundResource(R.drawable.icon_3)
+                    }
+                    else if(high == "이체"){
+                        binding.hicon.setBackgroundResource(R.drawable.icon_b)
+                    }
+                    else if(high == "교통비"){
+                        binding.hicon.setBackgroundResource(R.drawable.icon_bus)
+                    }
+                    else if(high == "의료비"){
+                        binding.hicon.setBackgroundResource(R.drawable.icon_medi)
+                    }
+                    else if(high == "구독/정기결제"){
+                        binding.hicon.setBackgroundResource(R.drawable.icon_net)
+                    }
+                    else if(high == "교육비"){
+                        binding.hicon.setBackgroundResource(R.drawable.icon_edu)
+                    }
+                    else if(high == "보험비"){
+                        binding.hicon.setBackgroundResource(R.drawable.icon_bo)
+                    }
+                    else if(high == "숙박비"){
+                        binding.hicon.setBackgroundResource(R.drawable.icon_suk)
+                    }
+                    else if(high == "스포츠"){
+                        binding.hicon.setBackgroundResource(R.drawable.icon_sports)
+                    }
+                    else if(high == "오락"){
+                        binding.hicon.setBackgroundResource(R.drawable.icon_game)
+                    }
+                    else{
+                        binding.hicon.setBackgroundResource(R.drawable.icon_5)
+                    }
+                    if(low == "문화"){
+                        binding.licon.setBackgroundResource(R.drawable.icon_mun)
+                    }
+                    else if(low == "카페"){
+                        binding.licon.setBackgroundResource(R.drawable.icon_2)
+                    }
+                    else if(low == "음식점"){
+                        binding.licon.setBackgroundResource(R.drawable.icon_4)
+                    }
+                    else if(low == "잡화소매"){
+                        binding.licon.setBackgroundResource(R.drawable.icon_con)
+                    }
+                    else if(low == "쇼핑"){
+                        binding.licon.setBackgroundResource(R.drawable.icon_3)
+                    }
+                    else if(low == "이체"){
+                        binding.licon.setBackgroundResource(R.drawable.icon_b)
+                    }
+                    else if(low == "교통비"){
+                        binding.licon.setBackgroundResource(R.drawable.icon_bus)
+                    }
+                    else if(low == "의료비"){
+                        binding.licon.setBackgroundResource(R.drawable.icon_medi)
+                    }
+                    else if(low == "구독/정기결제"){
+                        binding.licon.setBackgroundResource(R.drawable.icon_net)
+                    }
+                    else if(low == "교육비"){
+                        binding.licon.setBackgroundResource(R.drawable.icon_edu)
+                    }
+                    else if(low == "보험비"){
+                        binding.licon.setBackgroundResource(R.drawable.icon_bo)
+                    }
+                    else if(low == "숙박비"){
+                        binding.licon.setBackgroundResource(R.drawable.icon_suk)
+                    }
+                    else if(low == "스포츠"){
+                        binding.licon.setBackgroundResource(R.drawable.icon_sports)
+                    }
+                    else if(low == "오락"){
+                        binding.licon.setBackgroundResource(R.drawable.icon_game)
+                    }
+                    else{
+                        binding.licon.setBackgroundResource(R.drawable.icon_5)
+                    }
+                }
                 val goals_food = response.body()?.foodCategoryChangeBudget //목표 금액
                 val percentage_food = response.body()?.foodCategoryChangeUsePercent // 사용 퍼센트
                 val before_food = response.body()?.foodCategoryChangePercent // 지난달 대비 오른 퍼센트
@@ -63,6 +172,7 @@ class Monitoring_innerActivity : AppCompatActivity() {
                     binding.miText15.text="목표금액: "+goals_food
                     binding.miFoodBm.text="저번달 대비 "+before_food+"% 증가"
                     binding.miFoodP.text="현재"+percentage_food+"%"
+                    binding.miFoodBm.text="이번달 최초 사용 태그" //일단 임시로, 나중에 이프엘스로 바꿔
                     if (percentage_food != null) { // 막대그래프 업데이트
                         foodPercent = percentage_food
                         val foodProgressBar = findViewById<ProgressBar>(R.id.foodProgressBar)
@@ -88,6 +198,7 @@ class Monitoring_innerActivity : AppCompatActivity() {
                     binding.miText17.text="목표금액: "+goals_cafe
                     binding.miCafeBm.text="저번달 대비 "+before_cafe+"% 증가"
                     binding.miCafeP.text="현재"+percentage_cafe+"%"
+                    binding.miCafeBm.text="이번달 최초 사용 태그"
                     if (percentage_cafe != null) { // 막대그래프 업데이트
                         cafePercent = percentage_cafe
                         val cafeProgressBar = findViewById<ProgressBar>(R.id.cafeProgressBar)
@@ -101,6 +212,7 @@ class Monitoring_innerActivity : AppCompatActivity() {
                     binding.miText19.text="목표금액: "+goals_shopping
                     binding.miShopBm.text="저번달 대비 "+before_shopping+"% 증가"
                     binding.miShopP.text="현재"+percentage_shopping+"%"
+                    binding.miShopBm.text="이번달 최초 사용 태그"
                     if (percentage_shopping != null) { // 막대그래프 업데이트
                         shoppingPercent = percentage_shopping
                         val shoppingProgressBar = findViewById<ProgressBar>(R.id.shoppingProgressBar)
@@ -114,6 +226,7 @@ class Monitoring_innerActivity : AppCompatActivity() {
                     binding.miText21.text="목표금액: "+goals_etc
                     binding.miElseBm.text="저번달 대비 "+before_etc+"% 증가"
                     binding.miElseP.text="현재"+percentage_etc+"%"
+                    binding.miElseBm.text="이번달 최초 사용 태그"
                     if (percentage_etc != null) { // 막대그래프 업데이트
                         etcPercent = percentage_etc
                         val etcProgressBar = findViewById<ProgressBar>(R.id.etcProgressBar)
@@ -127,6 +240,7 @@ class Monitoring_innerActivity : AppCompatActivity() {
                     binding.miText25.text="목표금액: "+goals_person
                     binding.miPersonBm.text="저번달 대비 "+before_person+"% 증가"
                     binding.miPersonP.text="현재"+percentage_person+"%"
+                    binding.miPersonBm.text="이번달 최초 사용 태그"
                     if (percentage_person != null) { // 막대그래프 업데이트
                         personPercent = percentage_person
                         val personProgressBar = findViewById<ProgressBar>(R.id.personProgressBar)
@@ -140,6 +254,7 @@ class Monitoring_innerActivity : AppCompatActivity() {
                     binding.miText27.text="목표금액: "+goals_trans
                     binding.miTransBm.text="저번달 대비 "+before_trans+"% 증가"
                     binding.miTransP.text="현재"+percentage_trans+"%"
+                    binding.miTransBm.text="이번달 최초 사용 태그"
                     if (percentage_trans != null) { // 막대그래프 업데이트
                         transPercent = percentage_trans
                         val transProgressBar = findViewById<ProgressBar>(R.id.transProgressBar)
@@ -153,6 +268,7 @@ class Monitoring_innerActivity : AppCompatActivity() {
                     binding.miText23.text="목표금액: "+goals_some
                     binding.miSomeBm.text="저번달 대비 "+before_some+"% 증가"
                     binding.miSomeP.text="현재"+percentage_some+"%"
+                    binding.miSomeBm.text="이번달 최초 사용 태그"
                     if (percentage_some != null) { // 막대그래프 업데이트
                         somePercent = percentage_some
                         val someProgressBar = findViewById<ProgressBar>(R.id.someProgressBar)
@@ -166,6 +282,7 @@ class Monitoring_innerActivity : AppCompatActivity() {
                     binding.miText32.text="목표금액: "+goals_sub
                     binding.miSubBm.text="저번달 대비 "+before_sub+"% 증가"
                     binding.miSubP.text="현재"+percentage_sub+"%"
+                    binding.miSubBm.text="이번달 최초 사용 태그"
                     if (percentage_sub != null) { // 막대그래프 업데이트
                         subPercent = percentage_sub
                         val subProgressBar = findViewById<ProgressBar>(R.id.subProgressBar)
@@ -179,6 +296,7 @@ class Monitoring_innerActivity : AppCompatActivity() {
                     binding.miText29.text="목표금액: "+goals_medi
                     binding.miMediBm.text="저번달 대비 "+before_medi+"% 증가"
                     binding.miMediP.text="현재"+percentage_medi+"%"
+                    binding.miMediBm.text="이번달 최초 사용 태그"
                     if (percentage_medi != null) { // 막대그래프 업데이트
                         mediPercent = percentage_medi
                         val mediProgressBar = findViewById<ProgressBar>(R.id.mediProgressBar)
@@ -192,6 +310,7 @@ class Monitoring_innerActivity : AppCompatActivity() {
                     binding.miText34.text="목표금액: "+goals_mun
                     binding.miMunBm.text="저번달 대비 "+before_mun+"% 증가"
                     binding.miMunP.text="현재"+percentage_mun+"%"
+                    binding.miMunBm.text="이번달 최초 사용 태그"
                     if (percentage_mun != null) { // 막대그래프 업데이트
                         munPercent = percentage_mun
                         val munProgressBar = findViewById<ProgressBar>(R.id.munProgressBar)
@@ -205,6 +324,7 @@ class Monitoring_innerActivity : AppCompatActivity() {
                     binding.miText36.text="목표금액: "+goals_edue
                     binding.miEdueBm.text="저번달 대비 "+before_edue+"% 증가"
                     binding.miEdueP.text="현재"+percentage_edue+"%"
+                    binding.miEdueBm.text="이번달 최초 사용 태그"
                     if (percentage_edue != null) { // 막대그래프 업데이트
                         eduePercent = percentage_edue
                         val edueProgressBar = findViewById<ProgressBar>(R.id.edueProgressBar)
@@ -218,6 +338,7 @@ class Monitoring_innerActivity : AppCompatActivity() {
                     binding.miText38.text="목표금액: "+goals_bohum
                     binding.miBohumBm.text="저번달 대비 "+before_bohum+"% 증가"
                     binding.miBohumP.text="현재"+percentage_bohum+"%"
+                    binding.miBohumBm.text="이번달 최초 사용 태그"
                     if (percentage_bohum != null) { // 막대그래프 업데이트
                         bohumPercent = percentage_bohum
                         val bohumProgressBar = findViewById<ProgressBar>(R.id.bohumProgressBar)
@@ -231,6 +352,7 @@ class Monitoring_innerActivity : AppCompatActivity() {
                     binding.miText40.text="목표금액: "+goals_suk
                     binding.miSukBm.text="저번달 대비 "+before_suk+"% 증가"
                     binding.miSukP.text="현재"+percentage_suk+"%"
+                    binding.miSukBm.text="이번달 최초 사용 태그"
                     if (percentage_suk != null) { // 막대그래프 업데이트
                         sukPercent = percentage_suk
                         val sukProgressBar = findViewById<ProgressBar>(R.id.sukProgressBar)
@@ -244,6 +366,7 @@ class Monitoring_innerActivity : AppCompatActivity() {
                     binding.miText42.text="목표금액: "+goals_sports
                     binding.miSportsBm.text="저번달 대비 "+before_sports+"% 증가"
                     binding.miSportsP.text="현재"+percentage_sports+"%"
+                    binding.miSportsBm.text="이번달 최초 사용 태그"
                     if (percentage_sports != null) { // 막대그래프 업데이트
                         sportsPercent = percentage_sports
                         val sportsProgressBar = findViewById<ProgressBar>(R.id.sportsProgressBar)
@@ -257,6 +380,7 @@ class Monitoring_innerActivity : AppCompatActivity() {
                     binding.miText44.text="목표금액: "+goals_orak
                     binding.miOrakBm.text="저번달 대비 "+before_orak+"% 증가"
                     binding.miOrakP.text="현재"+percentage_orak+"%"
+                    binding.miOrakBm.text="이번달 최초 사용 태그"
                     if (percentage_orak != null) { // 막대그래프 업데이트
                         orakPercent = percentage_orak
                         val orakProgressBar = findViewById<ProgressBar>(R.id.orakProgressBar)
