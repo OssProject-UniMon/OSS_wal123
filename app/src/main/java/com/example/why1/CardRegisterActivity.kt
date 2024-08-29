@@ -49,7 +49,6 @@ class CardRegisterActivity : AppCompatActivity() {
                 Toast.makeText(applicationContext, "(테스트)선택된 항목: $sp1_Result", Toast.LENGTH_SHORT).show()
             }
             override fun onNothingSelected(parent: AdapterView<*>?) {
-                // 아무 항목도 선택되지 않았을 때의 처리
             }
         }
 
